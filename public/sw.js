@@ -1,7 +1,7 @@
 self.addEventListener('install', function(){
 	console.log('SW Installed');
-	event.waitUntil(caches.open('static')
-	.then(function(cache){
+	// event.waitUntil(
+		caches.open('static').then(function(cache){
 		cache.addAll([
 			'/',
 			'/index.html',
@@ -13,10 +13,22 @@ self.addEventListener('install', function(){
 			'https://momentjs.com/downloads/moment.js',
 			'https://code.jquery.com/ui/1.12.1/jquery-ui.js'
 			]);
-	})
-	);
+		})
+	// );
 });
 
 self.addEventListener('activate', function(){
 	console.log('SW Activated')
 })
+
+self.addEventListener('fetch', function(event){
+	event.respondWith(
+		caches.match(event.request).then(function(res){
+			if(res){
+				return res;
+			}else{
+				return fetch(event.request)
+			}
+		})
+		);
+	});
