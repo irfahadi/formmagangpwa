@@ -1,0 +1,15 @@
+{
+	"name":"Website Laporan Aktivitas Magang Bank Indonesia",
+	"shot_name":"WEB Magang BI",
+	"start_url":".",
+	"display":"standalone",
+	"orientation":"potrait",
+	"background_color":"#ccc",
+	"theme_color":"#5FAAE5",
+	"icons":[
+		{
+			"src":"/img/BI.png",
+			"type":"image/png"
+		}
+	]
+} 

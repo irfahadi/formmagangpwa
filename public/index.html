@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Magang Bank Indonesia</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css">
+    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://momentjs.com/downloads/moment.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script>
+    $( function() {
+    $( "#datepicker" ).datepicker({
+        dateFormat: 'yy-mm-dd',                  
+        minDate: moment().add('d', -2).toDate(),
+        maxDate: moment().add('d').toDate(),
+       });
+      } );
+    </script>
+<!--    <link rel="stylesheet" type="text/css" href="styles/debug.css">-->
+  </head>
+  <body>
+  <section class="hero as-background-white-bar is-fullheight">
+  <div class="hero-body">
+      <div class="container">
+<!--          <div class="column is-centered is-5-tablet is-4-desktop is-5-widescreen">-->
+              <form method="POST" action="/ajax/email" >
+                  <img src="img/BI.jpg" class="image is-centered">
+                  <h3 class="title is-3">Form Lobook Magang Bank Indonesia </h3>
+                  <div class="field">
+                      <label for="email" class="label">Input E-Mail
+                          <div class="control">
+                              <input type="email" name="email" id="email" class="input" required>
+                          </div>
+                      </label>
+                  </div>
+                  <div class="field">
+                      <label for="nim" class="label">Input Nomor induk Mahasiswa
+                          <div class="control">
+                              <input type="number" name="nim" id="nim" class="input" required>
+                          </div>
+                      </label>
+                  </div>
+                  <div class="field">
+                      <label for="nama" class="label">Input Nama Lengkap
+                          <div class="control">
+                              <input type="text" name="nama" id="nama" class="input" required>
+                          </div>
+                      </label>
+                  </div>
+                  <div class="field">
+                      <label for="college" class="label"> Input Nama Universitas/Institut/Sekolah Tinggi
+                          <div class="control">
+                              <input type="text" name="college" id="college" class="input" required>
+                          </div>
+                      </label>
+                  </div>
+                  <div class="field">
+                      <label for="fakultas" class="label">Input Fakultas/Jurusan
+                          <div class="control">
+                              <input type="text" name="fakultas" id="fakultas"  class="input" required>
+                          </div>
+                      </label>
+                  </div>
+                  <div class="field">
+                      <label for="tanggal" class="label">Input Tanggal
+                          <div class="control">
+                              <input type="text" id="datepicker" name="datepicker" class="input" required>
+                          </div>
+                      </label>
+                  </div>
+                  <div class="field">
+                      <label for="jam masuk" class="label">
+                          <div class="control">Input Jam Masuk
+                              <input type="time" name="jam_masuk" id="jam_masuk" class="input" required>
+                          </div>
+                      </label>
+                  </div>
+                  <div class="field">
+                      <label for="jam keluar" class="label">
+                          <div class="control">Input Jam Keluar
+                              <input type="time" name="jam_keluar" id="jam_keluar" class="input" required>
+                          </div>
+                      </label>
+                  </div>
+                  <div class="field">
+                      <label for="laporan" class="label">
+                          <textarea name="laporan" id="laporan" class="textarea" placeholder="input laporan aktivitas magangmu hari ini di sini!" rows="5" required></textarea>
+                      </label>
+                  </div>
+                  <div class="field">
+                      <button class="button is-primary is-large is-fullwidth" id="my-form-button" >INPUT</button>
+                      <p id="my-form-status"></p>
+                  </div>
+              </form>
+            <div id="testdiv"></div>
+          </div>
+      </div>
+  </div>
+  </section>
+  </body>
+</html>
