@@ -15,9 +15,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded());
 
-if('serviceWorker' in navigator){
-	navigator.serviceWorker.serviceWorker.register('/public/sw.js')
-}
+
 
 // var connection = mysql.createConnection({
 //   host: 'localhost',

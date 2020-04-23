@@ -18,6 +18,9 @@
         maxDate: moment().add('d').toDate(),
        });
       } );
+    if('serviceWorker' in navigator){
+    navigator.serviceWorker.serviceWorker.register('/sw.js')
+}
     </script>
 <!--    <link rel="stylesheet" type="text/css" href="styles/debug.css">-->
   </head>
